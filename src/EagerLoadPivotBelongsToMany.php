@@ -1,6 +1,6 @@
 <?php
 
-namespace AjCastro\EagerLoadPivotRelations;
+namespace audunru\EagerLoadPivotRelations;
 
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Arr;

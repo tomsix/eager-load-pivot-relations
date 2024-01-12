@@ -39,7 +39,7 @@ plan_item (pivot for plans and items)
 ```php
 class Unit extends \Eloquent {
 }
-use AjCastro\EagerLoadPivotRelations\EagerLoadPivotTrait;
+use audunru\EagerLoadPivotRelations\EagerLoadPivotTrait;
 class Item extends \Eloquent
 {
     // Use the trait here to override eloquent builder.
@@ -122,7 +122,7 @@ to our main model which is the `Plan` model, because the package needs to acess
 the belongsToMany relation (`items` relation) to recognize the used pivot acessor.
 
 ```php
-use AjCastro\EagerLoadPivotRelations\EagerLoadPivotTrait;
+use audunru\EagerLoadPivotRelations\EagerLoadPivotTrait;
 class Plan extends \Eloquent
 {
     use EagerLoadPivotTrait;

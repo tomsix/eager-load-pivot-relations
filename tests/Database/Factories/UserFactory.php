@@ -1,13 +1,13 @@
 <?php
 
-namespace AjCastro\EagerLoadPivotRelations\Tests\Database\Factories;
+namespace audunru\EagerLoadPivotRelations\Tests\Database\Factories;
 
-use AjCastro\EagerLoadPivotRelations\Tests\Models\User;
+use audunru\EagerLoadPivotRelations\Tests\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\AjCastro\EagerLoadPivotRelations\Tests\Models\User>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\audunru\EagerLoadPivotRelations\Tests\Models\User>
  */
 class UserFactory extends Factory
 {

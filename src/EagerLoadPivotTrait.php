@@ -1,6 +1,6 @@
 <?php
 
-namespace AjCastro\EagerLoadPivotRelations;
+namespace audunru\EagerLoadPivotRelations;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;

@@ -1,8 +1,8 @@
 <?php
 
-namespace AjCastro\EagerLoadPivotRelations\Tests\Database\Factories;
+namespace audunru\EagerLoadPivotRelations\Tests\Database\Factories;
 
-use AjCastro\EagerLoadPivotRelations\Tests\Models\Brand;
+use audunru\EagerLoadPivotRelations\Tests\Models\Brand;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BrandFactory extends Factory

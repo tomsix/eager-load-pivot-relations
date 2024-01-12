@@ -1,11 +1,11 @@
 <?php
 
-namespace AjCastro\EagerLoadPivotRelations\Tests\Unit;
+namespace audunru\EagerLoadPivotRelations\Tests\Unit;
 
-use AjCastro\EagerLoadPivotRelations\Tests\Models\Car;
-use AjCastro\EagerLoadPivotRelations\Tests\Models\CarUser;
-use AjCastro\EagerLoadPivotRelations\Tests\Models\User;
-use AjCastro\EagerLoadPivotRelations\Tests\TestCase;
+use audunru\EagerLoadPivotRelations\Tests\Models\Car;
+use audunru\EagerLoadPivotRelations\Tests\Models\CarUser;
+use audunru\EagerLoadPivotRelations\Tests\Models\User;
+use audunru\EagerLoadPivotRelations\Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Pagination\LengthAwarePaginator;
 

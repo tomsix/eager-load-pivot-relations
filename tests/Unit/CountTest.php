@@ -1,11 +1,11 @@
 <?php
 
-namespace AjCastro\EagerLoadPivotRelations\Tests\Unit;
+namespace audunru\EagerLoadPivotRelations\Tests\Unit;
 
-use AjCastro\EagerLoadPivotRelations\Tests\Models\CarUser;
-use AjCastro\EagerLoadPivotRelations\Tests\Models\Tire;
-use AjCastro\EagerLoadPivotRelations\Tests\Models\User;
-use AjCastro\EagerLoadPivotRelations\Tests\TestCase;
+use audunru\EagerLoadPivotRelations\Tests\Models\CarUser;
+use audunru\EagerLoadPivotRelations\Tests\Models\Tire;
+use audunru\EagerLoadPivotRelations\Tests\Models\User;
+use audunru\EagerLoadPivotRelations\Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CountTest extends TestCase

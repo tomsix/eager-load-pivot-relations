@@ -1,8 +1,8 @@
 <?php
 
-namespace AjCastro\EagerLoadPivotRelations\Tests\Models;
+namespace audunru\EagerLoadPivotRelations\Tests\Models;
 
-use AjCastro\EagerLoadPivotRelations\Tests\Database\Factories\TireFactory;
+use audunru\EagerLoadPivotRelations\Tests\Database\Factories\TireFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -15,10 +15,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  *
- * @method static \AjCastro\EagerLoadPivotRelations\Tests\Database\Factories\TireFactory factory(...$parameters)
- * @method static Builder|Tire                                                           newModelQuery()
- * @method static Builder|Tire                                                           newQuery()
- * @method static Builder|Tire                                                           query()
+ * @method static \audunru\EagerLoadPivotRelations\Tests\Database\Factories\TireFactory factory(...$parameters)
+ * @method static Builder|Tire                                                          newModelQuery()
+ * @method static Builder|Tire                                                          newQuery()
+ * @method static Builder|Tire                                                          query()
  *
  * @mixin \Eloquent
  */

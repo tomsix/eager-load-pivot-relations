@@ -1,6 +1,6 @@
 <?php
 
-namespace AjCastro\EagerLoadPivotRelations\Tests;
+namespace audunru\EagerLoadPivotRelations\Tests;
 
 use CreateBrandsTable;
 use CreateCarsTable;

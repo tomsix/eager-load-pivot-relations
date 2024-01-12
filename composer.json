@@ -29,12 +29,12 @@
   },
   "autoload": {
     "psr-4": {
-      "AjCastro\\EagerLoadPivotRelations\\": "src"
+      "audunru\\EagerLoadPivotRelations\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "AjCastro\\EagerLoadPivotRelations\\Tests\\": "tests"
+      "audunru\\EagerLoadPivotRelations\\Tests\\": "tests"
     },
     "classmap": [
       "tests/Database/Migrations"

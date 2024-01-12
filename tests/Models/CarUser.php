@@ -1,8 +1,8 @@
 <?php
 
-namespace AjCastro\EagerLoadPivotRelations\Tests\Models;
+namespace audunru\EagerLoadPivotRelations\Tests\Models;
 
-use AjCastro\EagerLoadPivotRelations\Tests\Database\Factories\CarUserFactory;
+use audunru\EagerLoadPivotRelations\Tests\Database\Factories\CarUserFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\Pivot;
@@ -16,10 +16,10 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
  * @property Color|null $color
  * @property User|null  $user
  *
- * @method static \AjCastro\EagerLoadPivotRelations\Tests\Database\Factories\CarUserFactory factory(...$parameters)
- * @method static Builder|CarUser                                                           newModelQuery()
- * @method static Builder|CarUser                                                           newQuery()
- * @method static Builder|CarUser                                                           query()
+ * @method static \audunru\EagerLoadPivotRelations\Tests\Database\Factories\CarUserFactory factory(...$parameters)
+ * @method static Builder|CarUser                                                          newModelQuery()
+ * @method static Builder|CarUser                                                          newQuery()
+ * @method static Builder|CarUser                                                          query()
  *
  * @mixin \Eloquent
  */

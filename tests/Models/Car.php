@@ -1,25 +1,25 @@
 <?php
 
-namespace AjCastro\EagerLoadPivotRelations\Tests\Models;
+namespace audunru\EagerLoadPivotRelations\Tests\Models;
 
-use AjCastro\EagerLoadPivotRelations\EagerLoadPivotTrait;
-use AjCastro\EagerLoadPivotRelations\Tests\Database\Factories\CarFactory;
+use audunru\EagerLoadPivotRelations\EagerLoadPivotTrait;
+use audunru\EagerLoadPivotRelations\Tests\Database\Factories\CarFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property int                                                        $id
- * @property string                                                     $model
- * @property string                                                     $make
- * @property \Illuminate\Support\Carbon|null                            $created_at
- * @property \Illuminate\Support\Carbon|null                            $updated_at
- * @property \AjCastro\EagerLoadPivotRelations\Tests\Models\User[]|null $users
+ * @property int                                                       $id
+ * @property string                                                    $model
+ * @property string                                                    $make
+ * @property \Illuminate\Support\Carbon|null                           $created_at
+ * @property \Illuminate\Support\Carbon|null                           $updated_at
+ * @property \audunru\EagerLoadPivotRelations\Tests\Models\User[]|null $users
  *
- * @method static \AjCastro\EagerLoadPivotRelations\Tests\Database\Factories\CarFactory factory(...$parameters)
- * @method static Builder|Car                                                           newModelQuery()
- * @method static Builder|Car                                                           newQuery()
- * @method static Builder|Car                                                           query()
+ * @method static \audunru\EagerLoadPivotRelations\Tests\Database\Factories\CarFactory factory(...$parameters)
+ * @method static Builder|Car                                                          newModelQuery()
+ * @method static Builder|Car                                                          newQuery()
+ * @method static Builder|Car                                                          query()
  *
  * @mixin \Eloquent
  */
