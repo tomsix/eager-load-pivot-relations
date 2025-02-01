@@ -9,12 +9,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property int                                                       $id
- * @property string                                                    $model
- * @property string                                                    $make
- * @property \Illuminate\Support\Carbon|null                           $created_at
- * @property \Illuminate\Support\Carbon|null                           $updated_at
- * @property \audunru\EagerLoadPivotRelations\Tests\Models\User[]|null $users
+ * @property int                             $id
+ * @property string                          $model
+ * @property string                          $make
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property User[]|null                     $users
  *
  * @method static \audunru\EagerLoadPivotRelations\Tests\Database\Factories\CarFactory factory(...$parameters)
  * @method static Builder|Car                                                          newModelQuery()

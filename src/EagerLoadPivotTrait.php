@@ -10,12 +10,12 @@ trait EagerLoadPivotTrait
     /**
      * Instantiate a new BelongsToMany relationship.
      *
-     * @param string|class-string<\Illuminate\Database\Eloquent\Model> $table
-     * @param string                                                   $foreignPivotKey
-     * @param string                                                   $relatedPivotKey
-     * @param string                                                   $parentKey
-     * @param string                                                   $relatedKey
-     * @param string|null                                              $relationName
+     * @param string|class-string<Model> $table
+     * @param string                     $foreignPivotKey
+     * @param string                     $relatedPivotKey
+     * @param string                     $parentKey
+     * @param string                     $relatedKey
+     * @param string|null                $relationName
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
@@ -27,7 +27,7 @@ trait EagerLoadPivotTrait
         $relatedPivotKey,
         $parentKey,
         $relatedKey,
-        $relationName = null
+        $relationName = null,
     ) {
         return new EagerLoadPivotBelongsToMany($query, $parent, $table, $foreignPivotKey, $relatedPivotKey, $parentKey, $relatedKey, $relationName);
     }
