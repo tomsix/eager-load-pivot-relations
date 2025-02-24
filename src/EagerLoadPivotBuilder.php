@@ -61,6 +61,10 @@ class EagerLoadPivotBuilder extends Builder
 
     public function eagerLoadPivotRelations(array $models): array
     {
+        if (count($models) === 0) {
+            return $models;
+        }
+
         foreach ($this->pivotEagerLoad as $pivotAccessor) {
             $this->eagerLoadPivotRelation($models, $pivotAccessor);
         }
