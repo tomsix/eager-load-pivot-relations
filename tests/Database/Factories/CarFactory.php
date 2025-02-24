@@ -1,13 +1,13 @@
 <?php
 
-namespace audunru\EagerLoadPivotRelations\Tests\Database\Factories;
+namespace TomSix\EagerLoadPivotRelations\Tests\Database\Factories;
 
-use audunru\EagerLoadPivotRelations\Tests\Models\Brand;
-use audunru\EagerLoadPivotRelations\Tests\Models\Car;
+use TomSix\EagerLoadPivotRelations\Tests\Models\Brand;
+use TomSix\EagerLoadPivotRelations\Tests\Models\Car;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\audunru\EagerLoadPivotRelations\Tests\Models\Car>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\TomSix\EagerLoadPivotRelations\Tests\Models\Car>
  */
 class CarFactory extends Factory
 {

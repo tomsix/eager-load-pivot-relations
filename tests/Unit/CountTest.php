@@ -1,11 +1,11 @@
 <?php
 
-namespace audunru\EagerLoadPivotRelations\Tests\Unit;
+namespace TomSix\EagerLoadPivotRelations\Tests\Unit;
 
-use audunru\EagerLoadPivotRelations\Tests\Models\CarUser;
-use audunru\EagerLoadPivotRelations\Tests\Models\Tire;
-use audunru\EagerLoadPivotRelations\Tests\Models\User;
-use audunru\EagerLoadPivotRelations\Tests\TestCase;
+use TomSix\EagerLoadPivotRelations\Tests\Models\CarUser;
+use TomSix\EagerLoadPivotRelations\Tests\Models\Tire;
+use TomSix\EagerLoadPivotRelations\Tests\Models\User;
+use TomSix\EagerLoadPivotRelations\Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CountTest extends TestCase

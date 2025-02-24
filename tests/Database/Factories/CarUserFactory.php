@@ -1,15 +1,15 @@
 <?php
 
-namespace audunru\EagerLoadPivotRelations\Tests\Database\Factories;
+namespace TomSix\EagerLoadPivotRelations\Tests\Database\Factories;
 
-use audunru\EagerLoadPivotRelations\Tests\Models\Car;
-use audunru\EagerLoadPivotRelations\Tests\Models\CarUser;
-use audunru\EagerLoadPivotRelations\Tests\Models\Color;
-use audunru\EagerLoadPivotRelations\Tests\Models\User;
+use TomSix\EagerLoadPivotRelations\Tests\Models\Car;
+use TomSix\EagerLoadPivotRelations\Tests\Models\CarUser;
+use TomSix\EagerLoadPivotRelations\Tests\Models\Color;
+use TomSix\EagerLoadPivotRelations\Tests\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\audunru\EagerLoadPivotRelations\Tests\Models\CarUser>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\TomSix\EagerLoadPivotRelations\Tests\Models\CarUser>
  */
 class CarUserFactory extends Factory
 {

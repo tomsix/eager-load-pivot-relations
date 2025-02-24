@@ -1,9 +1,9 @@
 <?php
 
-namespace audunru\EagerLoadPivotRelations\Tests\Models;
+namespace TomSix\EagerLoadPivotRelations\Tests\Models;
 
-use audunru\EagerLoadPivotRelations\EagerLoadPivotTrait;
-use audunru\EagerLoadPivotRelations\Tests\Database\Factories\CarFactory;
+use TomSix\EagerLoadPivotRelations\EagerLoadPivotTrait;
+use TomSix\EagerLoadPivotRelations\Tests\Database\Factories\CarFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property User[]|null                     $users
  *
- * @method static \audunru\EagerLoadPivotRelations\Tests\Database\Factories\CarFactory factory(...$parameters)
+ * @method static \TomSix\EagerLoadPivotRelations\Tests\Database\Factories\CarFactory factory(...$parameters)
  * @method static Builder|Car                                                          newModelQuery()
  * @method static Builder|Car                                                          newQuery()
  * @method static Builder|Car                                                          query()

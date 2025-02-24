@@ -1,9 +1,9 @@
 <?php
 
-namespace audunru\EagerLoadPivotRelations\Tests\Models;
+namespace TomSix\EagerLoadPivotRelations\Tests\Models;
 
-use audunru\EagerLoadPivotRelations\EagerLoadPivotTrait;
-use audunru\EagerLoadPivotRelations\Tests\Database\Factories\UserFactory;
+use TomSix\EagerLoadPivotRelations\EagerLoadPivotTrait;
+use TomSix\EagerLoadPivotRelations\Tests\Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -16,7 +16,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  *
- * @method static \audunru\EagerLoadPivotRelations\Tests\Database\Factories\UserFactory factory(...$parameters)
+ * @method static \TomSix\EagerLoadPivotRelations\Tests\Database\Factories\UserFactory factory(...$parameters)
  * @method static Builder|User                                                          newModelQuery()
  * @method static Builder|User                                                          newQuery()
  * @method static Builder|User                                                          query()

@@ -1,8 +1,8 @@
 <?php
 
-namespace audunru\EagerLoadPivotRelations\Tests\Models;
+namespace TomSix\EagerLoadPivotRelations\Tests\Models;
 
-use audunru\EagerLoadPivotRelations\Tests\Database\Factories\BrandFactory;
+use TomSix\EagerLoadPivotRelations\Tests\Database\Factories\BrandFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

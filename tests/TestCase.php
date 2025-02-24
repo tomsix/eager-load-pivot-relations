@@ -1,6 +1,6 @@
 <?php
 
-namespace audunru\EagerLoadPivotRelations\Tests;
+namespace TomSix\EagerLoadPivotRelations\Tests;
 
 use CreateBrandsTable;
 use CreateCarsTable;

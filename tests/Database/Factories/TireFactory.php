@@ -1,13 +1,13 @@
 <?php
 
-namespace audunru\EagerLoadPivotRelations\Tests\Database\Factories;
+namespace TomSix\EagerLoadPivotRelations\Tests\Database\Factories;
 
-use audunru\EagerLoadPivotRelations\Tests\Models\CarUser;
-use audunru\EagerLoadPivotRelations\Tests\Models\Tire;
+use TomSix\EagerLoadPivotRelations\Tests\Models\CarUser;
+use TomSix\EagerLoadPivotRelations\Tests\Models\Tire;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\audunru\EagerLoadPivotRelations\Tests\Models\Tire>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\TomSix\EagerLoadPivotRelations\Tests\Models\Tire>
  */
 class TireFactory extends Factory
 {
