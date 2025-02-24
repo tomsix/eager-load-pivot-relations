@@ -126,7 +126,7 @@ class EagerLoadPivotBelongsToMany extends BelongsToMany
     public function chunk($count, callable $callback): bool
     {
         return parent::chunk($count, function ($results, $page) use ($callback) {
-            $this->hydratePivotRelation($results);
+            $this->query->eagerLoadPivotRelations($results);
 
             return $callback($results, $page);
         });
@@ -224,7 +224,7 @@ class EagerLoadPivotBelongsToMany extends BelongsToMany
     public function orderedChunkById($count, callable $callback, $column = null, $alias = null, $descending = false): bool
     {
         return parent::orderedChunkById($count, function ($results, $page) use ($callback) {
-            $this->hydratePivotRelation($results);
+            $this->query->eagerLoadPivotRelations($results);
 
             return $callback($results, $page);
         }, $column, $alias, $descending);
@@ -256,10 +256,8 @@ class EagerLoadPivotBelongsToMany extends BelongsToMany
      */
     public function simplePaginate($perPage = null, $columns = ['*'], $pageName = 'page', $page = null): Paginator
     {
-        $this->query->addSelect($this->shouldSelect($columns));
-
-        return tap($this->query->simplePaginate($perPage, $columns, $pageName, $page), function ($paginator) {
-            $this->hydratePivotRelation($paginator->items());
+        return tap(parent::simplePaginate($perPage, $columns, $pageName, $page), function ($paginator) {
+            $this->query->eagerLoadPivotRelations($paginator->items());
         });
     }
 }
