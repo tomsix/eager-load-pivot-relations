@@ -46,15 +46,15 @@ class EagerLoadPivotBuilder extends Builder
         parent::with($relations, $callback);
 
         // Get the relation names that are pivot accessors.
-        $pivotEagerLoad = array_filter($this->getEagerLoads(), function (string $relation) {
+        $pivotEagerLoad = array_keys(array_filter($this->getEagerLoads(), function (string $relation) {
             return $this->isPivotAccessor($relation);
-        }, ARRAY_FILTER_USE_KEY);
+        }, ARRAY_FILTER_USE_KEY));
 
         // Set the loaded pivot accessors
-        $this->pivotEagerLoad = array_keys($pivotEagerLoad);
+        $this->pivotEagerLoad = [...$this->pivotEagerLoad, ...$pivotEagerLoad];
 
         // Remove the pivot accessors from the eager loads
-        $this->without($this->pivotEagerLoad);
+        $this->without($pivotEagerLoad);
 
         return $this;
     }
