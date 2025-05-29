@@ -13,7 +13,7 @@ class TireFactory extends Factory
 {
     protected $model = Tire::class;
 
-    public function definition()
+    public function definition(): array
     {
         return [
             'brand' => $this->faker->word,

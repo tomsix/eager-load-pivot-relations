@@ -2,32 +2,25 @@
 
 namespace TomSix\EagerLoadPivotRelations\Tests;
 
-use CreateBrandsTable;
-use CreateCarsTable;
-use CreateCarUserTable;
-use CreateColorsTable;
-use CreatePasswordResetsTable;
-use CreateTiresTable;
-use CreateUsersTable;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Orchestra\Testbench\Attributes\WithMigration;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 
+#[WithMigration]
 class TestCase extends BaseTestCase
 {
+    use RefreshDatabase;
+
     protected function setUp(): void
     {
         parent::setUp();
     }
 
-    protected function getPackageProviders($app) {}
-
-    protected function getEnvironmentSetUp($app)
+    /**
+     * Define database migrations.
+     */
+    protected function defineDatabaseMigrations(): void
     {
-        (new CreateUsersTable)->up();
-        (new CreatePasswordResetsTable)->up();
-        (new CreateBrandsTable)->up();
-        (new CreateCarsTable)->up();
-        (new CreateColorsTable)->up();
-        (new CreateCarUserTable)->up();
-        (new CreateTiresTable)->up();
+        $this->loadMigrationsFrom(__DIR__.'/Database/Migrations');
     }
 }

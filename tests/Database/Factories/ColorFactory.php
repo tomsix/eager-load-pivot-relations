@@ -12,7 +12,7 @@ class ColorFactory extends Factory
 {
     protected $model = Color::class;
 
-    public function definition()
+    public function definition(): array
     {
         return [
             'name' => $this->faker->word,

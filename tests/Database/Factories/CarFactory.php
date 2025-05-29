@@ -13,7 +13,7 @@ class CarFactory extends Factory
 {
     protected $model = Car::class;
 
-    public function definition()
+    public function definition(): array
     {
         return [
             'model' => $this->faker->words(rand(2, 4), true),

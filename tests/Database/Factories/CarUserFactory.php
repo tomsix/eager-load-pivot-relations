@@ -15,7 +15,7 @@ class CarUserFactory extends Factory
 {
     protected $model = CarUser::class;
 
-    public function definition()
+    public function definition(): array
     {
         return [
             'car_id' => function () {

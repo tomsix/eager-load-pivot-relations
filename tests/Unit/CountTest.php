@@ -24,13 +24,14 @@ class CountTest extends TestCase
                 ->create();
         }
 
-        $user = User::with([
-            'cars',
-            'cars.pivot.color',
-            'cars.pivot' => function ($query) {
-                return $query->withCount('tires');
-            },
-        ])
+        $user = User::query()
+            ->with([
+                'cars',
+                'cars.pivot.color',
+                'cars.pivot' => function ($query) {
+                    return $query->withCount('tires');
+                },
+            ])
             ->find($user->id);
 
         $this->assertSame($tires, $user->cars[0]->pivot->tires_count);
