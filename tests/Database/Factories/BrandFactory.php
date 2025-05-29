@@ -2,8 +2,8 @@
 
 namespace TomSix\EagerLoadPivotRelations\Tests\Database\Factories;
 
-use TomSix\EagerLoadPivotRelations\Tests\Models\Brand;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use TomSix\EagerLoadPivotRelations\Tests\Models\Brand;
 
 class BrandFactory extends Factory
 {

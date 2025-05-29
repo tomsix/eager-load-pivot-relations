@@ -2,33 +2,18 @@
 
 namespace TomSix\EagerLoadPivotRelations\Tests\Models;
 
-use TomSix\EagerLoadPivotRelations\EagerLoadPivotTrait;
-use TomSix\EagerLoadPivotRelations\Tests\Database\Factories\UserFactory;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use TomSix\EagerLoadPivotRelations\EagerLoadPivotTrait;
+use TomSix\EagerLoadPivotRelations\Tests\Database\Factories\UserFactory;
 
-/**
- * @property int                             $id
- * @property string                          $name
- * @property string                          $email
- * @property string                          $password
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- *
- * @method static \TomSix\EagerLoadPivotRelations\Tests\Database\Factories\UserFactory factory(...$parameters)
- * @method static Builder|User                                                          newModelQuery()
- * @method static Builder|User                                                          newQuery()
- * @method static Builder|User                                                          query()
- *
- * @mixin \Illuminate\Database\Eloquent
- */
 class User extends Authenticatable
 {
-    use HasFactory;
     use EagerLoadPivotTrait;
+    use HasFactory;
 
     protected $table = 'users';
+
     /**
      * The attributes that are mass assignable.
      *

@@ -2,20 +2,18 @@
 
 namespace TomSix\EagerLoadPivotRelations\Tests\Unit;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use TomSix\EagerLoadPivotRelations\Tests\Models\CarUser;
 use TomSix\EagerLoadPivotRelations\Tests\Models\Tire;
 use TomSix\EagerLoadPivotRelations\Tests\Models\User;
 use TomSix\EagerLoadPivotRelations\Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CountTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testItCanUseWithCountPivotRelations()
+    public function test_it_can_use_with_count_pivot_relations()
     {
-        $this->markTestSkipped('This could be a new feature, see #6');
-
         $user = User::factory()->create();
         $pivots = CarUser::factory(['user_id' => $user->id])->count(2)->create();
         $tires = rand(4, 8);
@@ -38,10 +36,8 @@ class CountTest extends TestCase
         $this->assertSame($tires, $user->cars[0]->pivot->tires_count);
     }
 
-    public function testItCanUseLoadCountPivotRelations()
+    public function test_it_can_use_load_count_pivot_relations()
     {
-        $this->markTestSkipped('This could be a new feature, see #6');
-
         $user = User::factory()->create();
         $pivots = CarUser::factory(['user_id' => $user->id])->count(2)->create();
         $tires = rand(4, 8);

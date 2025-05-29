@@ -2,18 +2,18 @@
 
 namespace TomSix\EagerLoadPivotRelations\Tests\Unit;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Pagination\LengthAwarePaginator;
 use TomSix\EagerLoadPivotRelations\Tests\Models\Car;
 use TomSix\EagerLoadPivotRelations\Tests\Models\CarUser;
 use TomSix\EagerLoadPivotRelations\Tests\Models\User;
 use TomSix\EagerLoadPivotRelations\Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Pagination\LengthAwarePaginator;
 
 class PaginateTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testItCanPaginateWithPivotRelations()
+    public function test_it_can_paginate_with_pivot_relations()
     {
         $pivots = CarUser::factory()->count(30)->create();
 
@@ -26,9 +26,8 @@ class PaginateTest extends TestCase
         $this->assertInstanceOf(LengthAwarePaginator::class, $users);
     }
 
-    public function testItCanPaginateAfterEagerLoadingPivotRelations()
+    public function test_it_can_paginate_after_eager_loading_pivot_relations()
     {
-        $this->markTestSkipped('Failing see #3');
         $pivots = CarUser::factory()->count(30)->create();
 
         $user = User::find(1)->cars()->with(['pivot.color'])->paginate(10);
@@ -36,7 +35,7 @@ class PaginateTest extends TestCase
         $this->assertInstanceOf(LengthAwarePaginator::class, $user);
     }
 
-    public function testItCanPaginateWithCustomPivotRelations()
+    public function test_it_can_paginate_with_custom_pivot_relations()
     {
         $pivots = CarUser::factory()->count(30)->create();
 
@@ -49,9 +48,8 @@ class PaginateTest extends TestCase
         $this->assertInstanceOf(LengthAwarePaginator::class, $cars);
     }
 
-    public function testItCanPaginateAfterEagerLoadingCustomPivotRelations()
+    public function test_it_can_paginate_after_eager_loading_custom_pivot_relations()
     {
-        $this->markTestSkipped('Failing see #3');
         $pivots = CarUser::factory()->count(30)->create();
 
         $car = Car::find(1)->users()->with(['car_user.color'])->paginate(10);

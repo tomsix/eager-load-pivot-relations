@@ -2,18 +2,18 @@
 
 namespace TomSix\EagerLoadPivotRelations\Tests\Unit;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use TomSix\EagerLoadPivotRelations\Tests\Models\Car;
 use TomSix\EagerLoadPivotRelations\Tests\Models\CarUser;
 use TomSix\EagerLoadPivotRelations\Tests\Models\Color;
 use TomSix\EagerLoadPivotRelations\Tests\Models\User;
 use TomSix\EagerLoadPivotRelations\Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class PivotTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testItCanUseWithPivotRelations()
+    public function test_it_can_use_with_pivot_relations()
     {
         $user = User::factory()->create();
         $pivots = CarUser::factory(['user_id' => $user->id])->count(2)->create();
@@ -28,7 +28,7 @@ class PivotTest extends TestCase
         $this->assertInstanceOf(Color::class, $user->cars[0]->pivot->color);
     }
 
-    public function testItCanUseLoadPivotRelations()
+    public function test_it_can_use_load_pivot_relations()
     {
         $user = User::factory()->create();
         $pivots = CarUser::factory(['user_id' => $user->id])->count(2)->create();
@@ -42,7 +42,7 @@ class PivotTest extends TestCase
         $this->assertInstanceOf(Color::class, $user->cars[0]->pivot->color);
     }
 
-    public function testItCanUseLoadMissingPivotRelations()
+    public function test_it_can_use_load_missing_pivot_relations()
     {
         $user = User::factory()->create();
         $pivots = CarUser::factory(['user_id' => $user->id])->count(2)->create();
@@ -56,7 +56,7 @@ class PivotTest extends TestCase
         $this->assertInstanceOf(Color::class, $user->cars[0]->pivot->color);
     }
 
-    public function testItCanUseWithCustomPivotRelations()
+    public function test_it_can_use_with_custom_pivot_relations()
     {
         $car = Car::factory()->create();
         $pivots = CarUser::factory(['car_id' => $car->id])->count(2)->create();
@@ -71,7 +71,7 @@ class PivotTest extends TestCase
         $this->assertInstanceOf(Color::class, $car->users[0]->car_user->color);
     }
 
-    public function testItCanUseLoadCustomPivotRelations()
+    public function test_it_can_use_load_custom_pivot_relations()
     {
         $car = Car::factory()->create();
         $pivots = CarUser::factory(['car_id' => $car->id])->count(2)->create();
@@ -85,7 +85,7 @@ class PivotTest extends TestCase
         $this->assertInstanceOf(Color::class, $car->users[0]->car_user->color);
     }
 
-    public function testItCanUseLoadMissingCustomPivotRelations()
+    public function test_it_can_use_load_missing_custom_pivot_relations()
     {
         $car = Car::factory()->create();
         $pivots = CarUser::factory(['car_id' => $car->id])->count(2)->create();

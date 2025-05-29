@@ -2,8 +2,8 @@
 
 namespace TomSix\EagerLoadPivotRelations\Tests\Database\Factories;
 
-use TomSix\EagerLoadPivotRelations\Tests\Models\Color;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use TomSix\EagerLoadPivotRelations\Tests\Models\Color;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\TomSix\EagerLoadPivotRelations\Tests\Models\Color>

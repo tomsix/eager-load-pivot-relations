@@ -153,7 +153,6 @@ class EagerLoadPivotBelongsToMany extends BelongsToMany
      * @param  array  $columns
      * @param  string  $cursorName
      * @param  string|null  $cursor
-     * @return \Illuminate\Contracts\Pagination\CursorPaginator
      */
     public function cursorPaginate($perPage = null, $columns = ['*'], $cursorName = 'cursor', $cursor = null): CursorPaginator
     {
@@ -215,11 +214,9 @@ class EagerLoadPivotBelongsToMany extends BelongsToMany
      * Chunk the results of a query by comparing IDs in a given order.
      *
      * @param  int  $count
-     * @param  callable  $callback
      * @param  string|null  $column
      * @param  string|null  $alias
      * @param  bool  $descending
-     * @return bool
      */
     public function orderedChunkById($count, callable $callback, $column = null, $alias = null, $descending = false): bool
     {
@@ -252,7 +249,6 @@ class EagerLoadPivotBelongsToMany extends BelongsToMany
      * @param  array  $columns
      * @param  string  $pageName
      * @param  int|null  $page
-     * @return \Illuminate\Contracts\Pagination\Paginator
      */
     public function simplePaginate($perPage = null, $columns = ['*'], $pageName = 'page', $page = null): Paginator
     {
