@@ -5,24 +5,12 @@ namespace TomSix\EagerLoadPivotRelations\Tests\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use TomSix\EagerLoadPivotRelations\EagerLoadPivotBelongsToMany;
 use TomSix\EagerLoadPivotRelations\EagerLoadPivotTrait;
 use TomSix\EagerLoadPivotRelations\Tests\Database\Factories\CarFactory;
 
-/**
- * @property int $id
- * @property string $model
- * @property string $make
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property User[]|null $users
- *
- * @method static \TomSix\EagerLoadPivotRelations\Tests\Database\Factories\CarFactory factory(...$parameters)
- * @method static Builder|Car newModelQuery()
- * @method static Builder|Car newQuery()
- * @method static Builder|Car query()
- *
- * @mixin \Eloquent
- */
 class Car extends Model
 {
     use EagerLoadPivotTrait;
@@ -35,20 +23,19 @@ class Car extends Model
         'brand_id',
     ];
 
-    public function brand()
+    public function brand(): BelongsTo
     {
         return $this->belongsTo(Brand::class);
     }
 
-    public function users()
+    public function users(): EagerLoadPivotBelongsToMany
     {
-        return $this->belongsToMany(User::class)
+        return $this->belongsToMany(User::class, CarUser::class)
             ->withPivot('color_id')
-            ->using(CarUser::class)
             ->as('car_user');
     }
 
-    protected static function newFactory()
+    protected static function newFactory(): CarFactory
     {
         return CarFactory::new();
     }

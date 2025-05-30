@@ -3,6 +3,8 @@
 namespace TomSix\EagerLoadPivotRelations\Tests\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 use TomSix\EagerLoadPivotRelations\Tests\Database\Factories\CarUserFactory;
 
@@ -20,27 +22,27 @@ class CarUser extends Pivot
         'user_id',
     ];
 
-    public function car()
+    public function car(): BelongsTo
     {
         return $this->belongsTo(Car::class);
     }
 
-    public function color()
+    public function color(): BelongsTo
     {
         return $this->belongsTo(Color::class);
     }
 
-    public function tires()
+    public function tires(): HasMany
     {
-        return $this->hasMany(Tire::class);
+        return $this->hasMany(Tire::class, 'car_user_id');
     }
 
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    protected static function newFactory()
+    protected static function newFactory(): CarUserFactory
     {
         return CarUserFactory::new();
     }

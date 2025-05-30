@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Pagination\LengthAwarePaginator;
 use TomSix\EagerLoadPivotRelations\Tests\Models\Car;
 use TomSix\EagerLoadPivotRelations\Tests\Models\CarUser;
+use TomSix\EagerLoadPivotRelations\Tests\Models\Color;
 use TomSix\EagerLoadPivotRelations\Tests\Models\User;
 use TomSix\EagerLoadPivotRelations\Tests\TestCase;
 
@@ -24,18 +25,36 @@ class PaginateTest extends TestCase
             ->paginate(10);
 
         $this->assertInstanceOf(LengthAwarePaginator::class, $users);
+
+        // When iterating the cars, the pivot relation should not load tires
+        $this->expectsDatabaseQueryCount(0);
+        foreach ($users as $user) {
+            foreach ($user->cars as $car) {
+                $this->assertInstanceOf(Color::class, $car->pivot->color);
+            }
+        }
     }
 
     public function test_it_can_paginate_after_eager_loading_pivot_relations()
     {
-        $pivots = CarUser::factory()->count(30)->create();
+        $user = User::factory()
+            ->hasAttached(Car::factory()->count(30), [
+                'color_id' => Color::factory()->create()->id,
+            ])
+            ->create();
 
-        $user = User::find(1)->cars()->with(['pivot.color'])->paginate(10);
+        $cars = $user->cars()->with(['pivot.color'])->paginate(10);
 
-        $this->assertInstanceOf(LengthAwarePaginator::class, $user);
+        $this->assertInstanceOf(LengthAwarePaginator::class, $cars);
+
+        // When iterating the cars, the pivot relation should not load the color
+        $this->expectsDatabaseQueryCount(0);
+        foreach ($cars as $car) {
+            $this->assertInstanceOf(Color::class, $car->pivot->color);
+        }
     }
 
-    public function test_it_can_paginate_with_custom_pivot_relations()
+    public function test_it_can_paginate_with_custom__pivot_accessor_relations()
     {
         $pivots = CarUser::factory()->count(30)->create();
 
@@ -48,7 +67,7 @@ class PaginateTest extends TestCase
         $this->assertInstanceOf(LengthAwarePaginator::class, $cars);
     }
 
-    public function test_it_can_paginate_after_eager_loading_custom_pivot_relations()
+    public function test_it_can_paginate_after_eager_loading_custom__pivot_accessor_relations()
     {
         $pivots = CarUser::factory()->count(30)->create();
 

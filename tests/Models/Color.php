@@ -4,6 +4,7 @@ namespace TomSix\EagerLoadPivotRelations\Tests\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use TomSix\EagerLoadPivotRelations\Tests\Database\Factories\ColorFactory;
 
 class Color extends Model
@@ -16,17 +17,17 @@ class Color extends Model
         'name',
     ];
 
-    public function cars()
+    public function cars(): BelongsToMany
     {
         return $this->belongsToMany(Car::class);
     }
 
-    public function users()
+    public function users(): BelongsToMany
     {
         return $this->belongsToMany(User::class);
     }
 
-    protected static function newFactory()
+    protected static function newFactory(): ColorFactory
     {
         return ColorFactory::new();
     }

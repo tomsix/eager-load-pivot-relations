@@ -17,12 +17,12 @@ class Brand extends Model
         'logo',
     ];
 
-    public function cars()
+    public function cars(): Car
     {
         return $this->hasMany(Car::class);
     }
 
-    protected static function newFactory()
+    protected static function newFactory(): BrandFactory
     {
         return BrandFactory::new();
     }

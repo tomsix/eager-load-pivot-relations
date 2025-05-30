@@ -29,9 +29,10 @@ class CountTest extends TestCase
                 'cars',
                 'cars.pivot.color',
                 'cars.pivot' => function ($query) {
-                    return $query->withCount('tires');
+                    $query->with('tires');
                 },
             ])
+            //->withCount('cars.pivot.tires')
             ->find($user->id);
 
         $this->assertSame($tires, $user->cars[0]->pivot->tires_count);

@@ -18,7 +18,7 @@ class Tire extends Model
         'car_user_id',
     ];
 
-    protected static function newFactory()
+    protected static function newFactory(): TireFactory
     {
         return TireFactory::new();
     }

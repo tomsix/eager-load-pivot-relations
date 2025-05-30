@@ -88,7 +88,7 @@ class EagerLoadPivotBuilder extends Builder
     }
 
     /**
-     * If relation name is a pivot accessor.
+     * If the relation name is a pivot accessor.
      */
     protected function isPivotAccessor(string $name): bool
     {
